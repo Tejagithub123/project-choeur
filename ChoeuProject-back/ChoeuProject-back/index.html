@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <button onclick="clickme()">hello</button>
+    <div id="text"></div>
+    <script async>
+        var name = '';
+        var socket = io.connect('http://localhost:3000');
+        console.log(socket);
+        let text = document.getElementById("text");
+        let tab = [];
+
+        socket.on("new_notification", data => {
+            alert(data);
+            console.log(data);
+        });
+        socket.on("notif_user", data => {
+            alert(data);
+            console.log(data);
+        });
+
+        socket.on("list", data => {
+            console.log(data);
+            if (tab.length < data.length) {
+                tab = []
+                
+                data.map(el => {
+                    tab.push(el);
+                    console.log(tab);
+                });
+            }
+            renderDates(); // Appel de la fonction pour mettre à jour l'affichage
+        });
+
+        // Fonction pour créer et afficher les éléments HTML avec les dates
+        function renderDates() {
+            text.innerHTML = ''; // Effacer le contenu actuel
+           
+            tab.map(el => {
+          
+
+                var doc = document.createElement("p");
+                text.appendChild(doc); // Utilisez appendChild pour ajouter au lieu de prepend
+              //  doc.innerHTML = el._id;
+                 doc.innerHTML = "user " + el.Choriste.nom + " " + el.Choriste.prenom + " dateDebutConge "+ el.dateDebutConge;
+            });
+        }
+
+        function clickme() {
+            // Vous pouvez ajouter des actions ici si nécessaire
+        }
+
+
+    </script>
+</body>
+</html>

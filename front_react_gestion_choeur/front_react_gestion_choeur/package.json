@@ -1,0 +1,63 @@
+{
+  "name": "antd-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.8.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.14",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.1.2",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.1.2",
+    "cors": "^2.8.5",
+    "html-to-image": "^1.11.11",
+    "jwt-decode": "^4.0.0",
+    "mdb-react-ui-kit": "^7.2.0",
+    "moment": "^2.30.1",
+    "next-routes": "^1.4.2",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.7",
+    "react-icons": "^5.2.1",
+    "react-modal": "^3.16.1",
+    "react-qr-code": "^2.0.12",
+    "react-scripts": "5.0.1",
+    "socket.io-client": "^4.7.5",
+    "sweetalert": "^2.1.2",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-router-dom": "^6.9.0"
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pyramid Display</title>
+    <style>
+        .pyramid {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cell {
+            border: 1px solid black;
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pyramid" id="pyramid"></div>
+
+    <script>
+async function fetchData() {
+  try {
+    const response = await fetch('http://localhost:3000/concerts/postplacement/65ac3d07f568015a70335bb3', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        // Ajoutez d'autres en-têtes si nécessaire
+      },
+      // Ne pas spécifier 'mode: no-cors'
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    createPyramid(data.reponse);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+
+
+    // ...
+
+function createPyramid(data) {
+    const pyramidDiv = document.getElementById('pyramid');
+    let rows = '';
+
+    data.forEach(row => {
+        rows += '<div class="row">';
+        row.forEach(candidat => {
+            rows += `<div class="cell">${candidat.nom} ${candidat.prenom} (${candidat.taille}, ${candidat.tessitureVocale})</div>`;
+        });
+        rows += '</div>';
+    });
+
+    pyramidDiv.innerHTML = rows;
+}
+
+// ...
+
+
+        window.onload = () => {
+            fetchData(); // Appeler la fonction fetchData lors du chargement de la page
+        };
+    </script>
+</body>
+
+</html>

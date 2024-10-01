@@ -1,0 +1,26 @@
+
+  .error-message {
+    margin-top: 20px;
+  }
+
+  .confirmation-info {
+    text-align: left;
+  }
+  
+  .column-size {
+    width: 50px; /* Adjust the width as needed */
+  }
+  
+  .column-size1 {
+    width: 20%; /* Adjust the width as needed */
+  }
+  
+  
+  td, th,tr {
+    text-align: center; /* Center the text horizontally */
+    vertical-align: middle; /* Center the text vertically */
+    font-size: 21px; /* Adjust the font size */
+    font-weight: normal; /* Adjust the font weight */
+   
+  }
+  
